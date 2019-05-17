@@ -1,0 +1,154 @@
+/*
+ * @Author: chengshanshan 
+ * @Date: 2019-03-12 15:45:21 
+ * @Last Modified by: chengshanshan
+ * @Last Modified time: 2019-04-10 16:39:49
+ * @instraction:分页样式
+ */
+@import './variable.scss';
+
+//修改iveiw中的分页样式,设置默认颜色为color-theme-btn，可传入色值修改颜色
+@mixin e-page($btn-color:$color-theme-btn) {
+  padding-top: 10px;
+  text-align: center;
+
+  li {
+    border-radius: 2px;
+    border: none;
+    background-color: #F4F4F5;
+    min-width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+
+    &:hover {
+      background-color: $btn-color;
+
+      a {
+        color: #fff;
+      }
+    }
+
+  }
+
+  .ivu-page-item-active {
+    background-color: $btn-color;
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+//修改iview中的dropdown样式
+@mixin e-dropdown() {
+  .iconfont {
+    &:hover {
+      color: $color-theme;
+    }
+
+  }
+
+  .ivu-dropdown-item {
+    text-align: center;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-theme;
+    }
+  }
+
+}
+
+//form表单中的标题样式
+@mixin e-form-title() {
+  color: $font-color-content;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+// 每个模块的标题
+@mixin e-p-title {
+  background: #F9FAFB;
+  color: $font-color-content;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 20px 0 20px 20px;
+}
+
+// 标题旁边的添加按钮
+@mixin e-add-btn {
+  width: 66px;
+  height: 40px;
+  position: absolute;
+  right: -80px;
+  top: 0;
+  font-size: 25px;
+  text-align: center;
+  background: $color-theme;
+  color: #fff;
+  cursor: pointer;
+}
+
+// 删除时候的红色横线
+@mixin e-del-tr {
+  position: relative;
+
+  /*定位横线（当横线的父元素）*/
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    background: #ff3a3a;
+    width: 140%;
+    height: 1px;
+    right: -20%;
+  }
+}
+//修改iview组件中的表格样式
+@mixin e-table{
+  border: none;
+    thead {
+      .ivu-table-cell {
+        span {
+          font-size: 15px;
+          font-family: "PingFang SC";
+          font-weight: bold;
+          color: #232424;
+        }
+      }
+    }
+  .ivu-table {
+    &:after{
+    background-color: transparent;
+    }
+  }
+  tr{
+    td{
+        &:first-child{
+          border-left:3px solid transparent;
+        }
+      }
+    &.ivu-table-row-hover{
+      td{
+        &:first-child{
+          border-left:3px solid $color-theme
+        }
+      }
+    }
+  }
+
+}
+// 系统设置 底部按钮
+@mixin bot-btn {
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 50px 10px;
+  background-color: $color-theme-btn;
+  border: none;
+  color: #fff;
+  box-shadow: 2px 5px 6px rgba(149, 156, 161, 0.8);
+  cursor: pointer;
+}
